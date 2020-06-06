@@ -1,0 +1,41 @@
+{% extends "layouts.html" %}
+{% block title %}Iniciar sesion{% endblock %}
+{% block main %}
+
+<div class="container login-form" >
+	<center>
+	<div class="form-row">
+			<div class="col-12">
+					<h2 class="login-title">Iniciar sesion</h2>
+			</div>
+	</div>
+	</center>
+
+
+
+	<div class="panel panel-default" >
+		<div class="panel-body">
+			<form action='/loginform' class="form-signin" method='POST'>
+				<h5>Usuario</h5>
+				<div class="input-group login-userinput">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">
+				</div>
+
+				<h5>Contraseña</h5>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+					<span id="showPassword" class="input-group-btn">
+            		<button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button></span>
+				</div>
+				<button class="btn btn-primary btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+				<div class="checkbox login-options">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

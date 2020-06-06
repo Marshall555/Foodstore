@@ -1,0 +1,232 @@
+{% extends "layouts.html" %}
+{% block title %}Info{% endblock %}
+{% block main %}
+
+<div class="container my-5">
+    <section>
+        <div class="card mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-left" src="{{ lugar.ruta_foto }}"
+                        width="500" height="800" alt="project image">
+                </div>
+
+                <div class="col-md-6 p-5 align-self-center">
+
+                    <h5 class="font-weight-normal mb-3">{{lugar.nombre}}</h5>
+
+                    <p class="text-muted">{{ lugar.descripcion }}</p>
+
+                    <ul class="list-unstyled font-small mt-5 mb-0">
+                        <li>
+                            <p class="text-uppercase mb-2"><strong>Categoria: {{ lugar.nombre_cat }}</strong></p>
+                            <p class="text-muted mb-4"></p>
+                        </li>
+
+                        <li>
+                            <p class="text-uppercase mb-2"><strong>Departameto: {{lugar.departamento}}</strong></p>
+                            <p class="text-muted mb-4"></p>
+                        </li>
+
+                        <li>
+                            <p class="text-uppercase mb-2"><strong>Municipio: {{ lugar.municipio }}</strong></p>
+                            <p class="text-muted mb-4"></p>
+                        </li>
+
+
+                        <li>
+                            <p class="text-uppercase mb-2"><strong>Telefono: {{ lugar.telefono }}</strong></p>
+                            <p class="text-muted mb-4"></p>
+                        </li>
+
+                        <li>
+                            <p class="text-uppercase mb-2"><strong>Direccion: {{lugar.direccion_ref}}</strong></p>
+                            <p class="text-muted mb-4"></p>
+                        </li>
+
+                        <li>
+                            <p class="text-uppercase mb-2"><strong></strong></p>
+                            <a href=https://www.facebook.com/HardRockManagua> </a> </li> <li>
+                                <p class="text-uppercase mt-4 mb-2"><strong></strong></p>
+                                <div class="d-flex justify-content-start">
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a class="text-muted" href="#"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container-fluid mt-3 mb-5">
+    <section class="mb-4">
+
+        <style>
+            .map-container {
+                overflow: hidden;
+                position: relative;
+                height: 0;
+            }
+
+            .map-container iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+        </style>
+
+        <div id="full-width-map" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="{{ lugar.mapa_src }}"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+    </section>
+</div>
+
+<!--Productos-->
+
+<div class="card mb-3">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Nombre del Producto</h5>
+        <h5 class="font-weight-normal mb-3"></h5>
+        <p class="text-muted">Aqui la descripcion</p>
+
+        <ul class="list-unstyled font-small mt-5 mb-0">
+            <li>
+                <p class="text-uppercase mb-2">Precio</p>
+                <p class="text-muted mb-4"></p>
+            </li>
+
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">0.00</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+
+            <div class="input-group">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <span class="input-group-text">C$</span>
+                    <span class="input-group-text">0.00</span>
+                </div>
+            </div>
+
+        </ul>
+    </div>
+</div>
+
+<!--Comentarios-->
+
+<div class="row bootstrap snippets">
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Comment panel
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-info pull-right">Post</button>
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="media-list">
+                        <li class="media">
+                            <a href="#" class="pull-left">
+                                <img src="" alt="" class="img-circle">
+                            </a>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">30 min ago</small>
+                                </span>
+                                <strong class="text-success">@MartinoMont</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <a href="#" class="pull-left">
+                                <img src="" alt="" class="img-circle">
+                            </a>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">30 min ago</small>
+                                </span>
+                                <strong class="text-success">@LaurenceCorreil</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <a href="#" class="pull-left">
+                                <img src="" alt="" class="img-circle">
+                            </a>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">30 min ago</small>
+                                </span>
+                                <strong class="text-success">@JohnNida</strong>
+                                <p>
+                                    Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <center>
+            <h4>Star rating </h4>
+            <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+                    type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio"
+                    name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2"
+                    id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
+                    for="1">☆</label>
+        </center>
+    </div>
+
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <h3>Comenta</h3>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                    <form>
+                        <textarea placeholder="What are you doing right now?"></textarea>
+                        <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

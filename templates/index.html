@@ -1,0 +1,86 @@
+{% extends "layouts.html" %}
+{% block title %}Inicio{% endblock %}
+{% block main %}
+
+<div class="row">
+
+
+        {% for lugar in lugares %}
+        <div class="card col-12 col-sm-4 my-2">
+            <img src="{{ lugar.ruta_foto }}" class="card-img-top" alt="{{ lugar.nombre }}"
+                width="300" height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ lugar.nombre }}</h5>
+                <p class="card-text">Categoría: {{lugar.nombre_cat}}</p>
+                <p class="card-text">Teléfono: {{ lugar.telefono}}</p>
+                <a href="{{ url_for('infoform', lugar_id=lugar.lugar_id) }}" class="btn btn-primary stretched-link">Informacion</a>
+
+            </div>
+        </div>
+        {% endfor %}
+</div>
+        <!--
+        <div class="card" class="col-12 col-sm-6  col-md-4">
+            <img src="{{ url_for('static', filename= 'img/buffalowings.jpg')}}" class="card-img-top" alt="Buffalo wings"
+                width="300" height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Buffalo Wings</h5>
+                <p class="card-text">Categoria:</p>
+                <p class="card-text">Telfono:</p>
+                <a href="/infoform" class="btn btn-primary stretched-link">Informacion</a>
+            </div>
+        </div>
+
+        <div class="card" class="col-12 col-sm-6 col-md-4">
+            <img src="{{ url_for('static', filename= 'img/macdonald.jpeg')}}" class="card-img-top" alt="Macdonald"
+                width="300" height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">McDonalds</h5>
+                <p class="card-text">Categoria:</p>
+                <p class="card-text">Telfono:</p>
+                <a href="/infoform" class="btn btn-primary stretched-link">Informacion</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="card-deck">
+        <div class="card">
+            <img href="https://imgur.com/ocLMuUo" src="{{ url_for('static', filename= 'img/carl-jr.jpg')}}"
+                class="card-img-top" alt="Carls-Jr" width="300" height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Carls Junior</h5>
+                <p class="card-text">Categoria:</p>
+                <p class="card-text">Telfono:</p>
+                <a href="/infoform" class="btn btn-primary stretched-link">Informacion</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.imgur.com/ocLMuUo.jpg" class="card-img-top" alt="Buffet El Maná" width="300"
+                height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Buffet El Maná</h5>
+                <p class="card-text">Categoria:</p>
+                <p class="card-text">Telfono:</p>
+                <a href="/infoform" class="btn btn-primary stretched-link">Informacion</a>
+            </div>
+        </div>
+        <div class="card">
+            <img href="https://imgur.com/XG8FRuj" src="https://i.imgur.com/XG8FRuj.jpg" alt="Mijunas Bar Cafe"
+                width="300" height="300" class="img.fluid mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Mijunas Bar Cafe</h5>
+                <p class="card-text">Categoria:</p>
+                <p class="card-text">Telfono:</p>
+                <a href="/infoform" class="btn btn-primary stretched-link">Informacion</a>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+{% endblock %}

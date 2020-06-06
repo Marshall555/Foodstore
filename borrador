@@ -1,0 +1,184 @@
+<div class="container login-form">
+	<h2 class="login-title">- Please Login -</h2>                     LOGIN
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form>
+				<div class="input-group login-userinput">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+					<span id="showPassword" class="input-group-btn">
+            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+          </span>
+				</div>
+				<button class="btn btn-primary btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+				<div class="checkbox login-options">
+					<label><input type="checkbox"/> Remember Me</label>
+					<a href="#" class="login-forgot">Forgot Username/Password?</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+  {% with message = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li> {{ message }} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+
+
+            <div class="row control-group">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <br>
+                   <br>
+
+                    <form id="loginFrom" method="POST">
+
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+                        <div class="form-row">
+                            <div class="col">
+                                {{ render_field(form.p_nombre, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.s_nombre, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.p_apellido, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.s_apellido, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.tel, class= 'form-control' ) }}
+                            <div class="col">
+                                {{ render_field(form.correo, class= 'form-control' ) }}
+                                <small id="emailHelp" class="form-text text-muted"><br>No compartiremos tu correo con alguien mas.</small>
+                            </div>
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.username, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.password, class= 'form-control' ) }}
+                            </div>
+                            <div class="col">
+                                {{ render_field(form.confirm, class= 'form-control' ) }}
+                            </div>
+
+                            {{ form.honeypot }}
+
+                            <br>
+                            <div id="succes"></div>
+                            <div class="row">
+                                <button type="sunmit" class="btn btn-primary">Resgistrarse</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+       {{ render_field(form.correo, class= 'form-control' ) }}
+       <small id="emailHelp" class="form-text text-muted"><br>No compartiremos tu correo con alguien mas.</small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+      {{ render_field(form.password, class= 'form-control' ) }}
+    </div>
+    <div class="col">
+      {{ render_field(form.confirm, class= 'form-control' ) }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Tel</label>
+      <input type="text" class="form-control" id="tel">
+      {{ render_field(form.tel, class= 'form-control' ) }}
+    </div>
+    {{ form.honeypot }}
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+
+
+    <form>
+        <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Primer Apellido">
+      {{ render_field(form.p_apellido, class= 'form-control' ) }}
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Segundo Apellido">
+       {{ render_field(form.s_apellido, class= 'form-control' ) }}
+    </div>
+  </div>
+
+
+
+
+<div class="row">
+    <div class="card mb-3" class="col-12 col-md-1">
+    <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">Descripcion</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

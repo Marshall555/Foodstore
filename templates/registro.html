@@ -1,0 +1,83 @@
+{% extends "layouts.html" %}
+{% block title %}Registro{% endblock %}
+{% block main %}
+
+
+  {% from "macro.html" import render_field %}
+
+
+
+<form id="registroFrom" method="POST">
+
+        <div class="form-row">
+
+
+    <div class="col-12">
+				<h2 class="login-title">Registro</h2>
+	</div>
+
+    <div class="col-6">
+      {{ render_field(form.p_nombre, class= 'form-control' ) }}
+    </div>
+
+    <div class="col-6">
+      {{ render_field(form.s_nombre, class= 'form-control' ) }}
+    </div>
+
+
+     <div class="col-6">
+      {{ render_field(form.p_apellido, class= 'form-control' ) }}
+    </div>
+
+     <div class="col-6">
+      {{ render_field(form.s_apellido, class= 'form-control' ) }}
+    </div>
+    </div>
+
+    <div class="form-row">
+     <div class="col-7">
+        {{ render_field(form.correo, class= 'form-control' ) }}
+        <small id="emailHelp" class="form-text text-muted"><br>No compartiremos tu correo con alguien mas.</small>
+    </div>
+
+<div class="form-row">
+
+    </div>
+
+    <div class="col-4">
+         {{ render_field(form.tel, class= 'form-control' ) }}
+    </div>
+    </div>
+
+    <div class="form-row">
+     <div class="col-4">
+         {{ render_field(form.username, class= 'form-control' ) }}
+    </div>
+    </div>
+
+
+    <div class="form-row">
+    <div class="col-4">
+         {{ render_field(form.password, class= 'form-control' ) }}
+    </div>
+    </div>
+
+    <div class="form-row">
+     <div class="col-4">
+         {{ render_field(form.confirm, class= 'form-control' ) }}
+    </div>
+</div>
+
+
+    <button type="sunmit" class="btn btn-primary">Registrarse</button>
+
+
+{{ form.honeypot }}
+
+</form>
+
+
+
+
+{% endblock %}
+
